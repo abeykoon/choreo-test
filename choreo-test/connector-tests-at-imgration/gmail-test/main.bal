@@ -17,6 +17,11 @@ type Email record {
     string message;
 };
 
+type Response record {
+    string message;
+    string id;
+};
+
 final gmail:Client gmailClient = check new ({
     auth: {
         clientId: gmailOAuthConfig.clientId,
@@ -28,7 +33,7 @@ final gmail:Client gmailClient = check new ({
 
 service / on new http:Listener(9090) {
 
-    resource function post sendemail(@http:Payload Email email) returns error? {
+    resource function post sendemail(@http:Payload Email email) returns Response|error {
 
         gmail:MessageRequest emailToSend = {
             recipient: email.recipient,
@@ -36,6 +41,11 @@ service / on new http:Listener(9090) {
             messageBody: email.message
         };
         gmail:Message sendMessageResp = check gmailClient->sendMessage(emailToSend);
-        log:printInfo("Email is sent. Generated ID : " + sendMessageResp.id);
+        log:printInfo("Email is sent successfully. Generated ID : " + sendMessageResp.id);
+        Response respose =  {
+            message:"Email is sent successfully to " + email.recipient,
+            id: sendMessageResp.id 
+        };
+        return respose;
     }
 }

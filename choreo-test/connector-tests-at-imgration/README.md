@@ -24,7 +24,18 @@ Use your github PAT token to configure `gitHubOAuthConfig`. This program will cr
 ### gmail-test
 
 Deploy as a **service**.
-Invoke the service with following payload structure. It will send an email to the specified . Get gmail tokens following [this](https://docs.google.com/document/d/1wl45tSHrZXLbnvIE3Zh57-2TpoXWxcxVGL7rpAojYus/edit#heading=h.seuclod1jklt) guide. 
+Invoke the service with following payload structure. 
+http://localhost:9090/sendemail
+
+```
+{
+    "recipient":"abc.com",
+    "header":"This is a test email",
+    "message":"Please ignore and do not reply."
+}
+```
+
+It will send an email to the specified with specified information. Get gmail tokens following [this](https://docs.google.com/document/d/1wl45tSHrZXLbnvIE3Zh57-2TpoXWxcxVGL7rpAojYus/edit#heading=h.seuclod1jklt) guide. 
 
 
 ### hubspot-connector
