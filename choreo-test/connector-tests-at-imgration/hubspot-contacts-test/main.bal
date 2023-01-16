@@ -42,9 +42,9 @@ public function main() returns error? {
     log:printInfo("Reading customer information from Google sheet...");
 
     sheets:Range gSheetData = check gSheetClient->getRange(spreadsheetId, worksheetName, "A1:D20");
-    string[][] customerData = <string[][]>gSheetData.values;
+    (int|string|decimal)[][] customerData = gSheetData.values;
 
-    foreach string[] customer in customerData {
+    foreach (int|string|decimal)[] customer in customerData {
         hubspotContact:SimplePublicObjectInput contact = {
             properties: {
                 "firstname": customer[0],
