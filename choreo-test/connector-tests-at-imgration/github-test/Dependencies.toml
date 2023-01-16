@@ -86,9 +86,6 @@ dependencies = [
 	{org = "ballerina", name = "time"},
 	{org = "ballerina", name = "url"}
 ]
-modules = [
-	{org = "ballerina", packageName = "http", moduleName = "http"}
-]
 
 [[package]]
 org = "ballerina"
@@ -311,7 +308,6 @@ org = "hasithah"
 name = "github_test"
 version = "0.1.0"
 dependencies = [
-	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "log"},
 	{org = "ballerinai", name = "observe"},
 	{org = "ballerinax", name = "github"}

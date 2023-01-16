@@ -1,5 +1,4 @@
 import ballerinax/github;
-import ballerina/http;
 import ballerina/log;
 
 @display {
@@ -14,11 +13,11 @@ configurable string repository = ?;
 }
 configurable string repositoryOwner = ?;
 
-configurable http:BearerTokenConfig gitHubOAuthConfig = ?;
+configurable string gitHubOAuthConfig = ?;
 
 github:Client githubClient = check new ({
     auth: {
-        token: gitHubOAuthConfig.token
+        token: gitHubOAuthConfig
     }
 });
 
@@ -28,5 +27,5 @@ public function main() returns error? {
         body: "Update to next version"
     };
     github:Issue issue = check githubClient->createIssue(issueDetail, repositoryOwner, repository);
-    log:printInfo("Issue is created with ID = " + issue.id);
+    log:printInfo("Issue is created with ID = " + issue.number.toString());
 }
