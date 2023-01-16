@@ -41,7 +41,7 @@ public function main() returns error? {
 
     log:printInfo("Reading customer information from Google sheet...");
 
-    sheets:Range gSheetData = check gSheetClient->getRange(spreadsheetId, worksheetName, "A1:D20");
+    sheets:Range gSheetData = check gSheetClient->getRange(spreadsheetId, worksheetName, "A2:D21");
     (int|string|decimal)[][] customerData = gSheetData.values;
 
     foreach (int|string|decimal)[] customer in customerData {
