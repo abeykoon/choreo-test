@@ -3,7 +3,7 @@ import ballerina/log;
 
 @display {
     label: "Repository",
-    description: "Repositoy to create the issue"
+    description: "Repositoy to create the issue at"
 }
 configurable string repository = ?;
 
