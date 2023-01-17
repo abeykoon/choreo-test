@@ -1,0 +1,12 @@
+[build-options]
+  observabilityIncluded = true
+
+[package]
+  distribution = "2201.3.1"
+  export = ["gcalendar_new_event_to_asana_new_task"]
+  icon = "docs/icon.png"
+  keywords = ["Kind/Sample","Type/Webhook","Category/Integration","Internal/http"]
+  name = "gcalendar_new_event_to_asana_new_task"
+  org = "hasithahiranya"
+  version = "3.1.0"
+
