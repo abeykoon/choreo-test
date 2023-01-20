@@ -2,7 +2,7 @@ import ballerina/log;
 import ballerinax/hubspot.crm.contact as hubspotContact;
 import ballerinax/googleapis.sheets as sheets;
 
-// HubSpot configuration parameters
+//Configuration parameters
 configurable string hubspotAccessToken = ?;
 configurable OAuth2RefreshTokenGrantConfig gsheetOAuthConfig = ?;
 configurable string spreadsheetId = ?;
@@ -24,10 +24,17 @@ type OAuth2RefreshTokenGrantConfig record {
 
 # This will read first 20 rows from specified GSheet and add them as hubspot customers
 # + return - Error if operation failed
-public function main() returns error? { 
+public function main() returns error? {
 
     log:printInfo("Initializing connectors...");
-
+    // hubspotContact:ConnectionConfig config = {
+    //     auth: {
+    //         refreshToken: "",
+    //         clientId: "",
+    //         clientSecret: ""
+    //     }
+    // };
+    // hubspotContact:Client hubSpotClient = check new hubspotContact:Client(config);
     hubspotContact:Client hubSpotClient = check new hubspotContact:Client({auth: {token: hubspotAccessToken}});
     sheets:Client gSheetClient = check new ({
         auth: {
