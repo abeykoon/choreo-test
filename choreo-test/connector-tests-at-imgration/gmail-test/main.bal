@@ -4,6 +4,7 @@ import ballerina/log;
 
 configurable OAuth2RefreshTokenGrantConfig gmailOAuthConfig = ?;
 
+//Gmail credentails
 type OAuth2RefreshTokenGrantConfig record {
     string clientId;
     string clientSecret;
