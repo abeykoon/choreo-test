@@ -1,0 +1,12 @@
+[build-options]
+  observabilityIncluded = true
+
+[package]
+  distribution = "2201.0.4"
+  export = ["gmail_new_attachment_to_drive"]
+  icon = "docs/icon.png"
+  keywords = ["Type/Webhook","Category/Integration","Internal/http"]
+  name = "gmail_new_attachment_to_drive"
+  org = "hasithahiranya"
+  version = "1.1.2"
+
