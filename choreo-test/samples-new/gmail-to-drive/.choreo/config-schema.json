@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "hasithahiranya": {
+      "type": "object",
+      "properties": {
+        "gmail_new_attachment_to_drive": {
+          "type": "object",
+          "properties": {
+            "gDriveFolderId": {
+              "type": "string",
+              "description": ""
+            },
+            "gDriveOauthConfig": {
+              "type": "object",
+              "properties": {
+                "clientId": {
+                  "type": "string"
+                },
+                "clientSecret": {
+                  "type": "string"
+                },
+                "refreshToken": {
+                  "type": "string"
+                },
+                "refreshUrl": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "clientId",
+                "clientSecret",
+                "refreshToken",
+                "refreshUrl"
+              ],
+              "name": "hasithahiranya/gmail_new_attachment_to_drive:1.1.2:OAuth2RefreshTokenGrantConfig",
+              "description": ""
+            },
+            "config": {
+              "type": "object",
+              "properties": {
+                "clientId": {
+                  "type": "string"
+                },
+                "clientSecret": {
+                  "type": "string"
+                },
+                "refreshUrl": {
+                  "type": "string"
+                },
+                "refreshToken": {
+                  "type": "string"
+                },
+                "project": {
+                  "type": "string"
+                },
+                "callbackURL": {
+                  "type": "string"
+                },
+                "secureSocketConfig": {
+                  "type": "object",
+                  "properties": {
+                    "enable": {
+                      "type": "boolean"
+                    },
+                    "cert": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "password"
+                          ],
+                          "name": "ballerina/crypto:2.2.2:TrustStore"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "key": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "path",
+                            "password"
+                          ],
+                          "name": "ballerina/crypto:2.2.2:KeyStore"
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "certFile": {
+                              "type": "string"
+                            },
+                            "keyFile": {
+                              "type": "string"
+                            },
+                            "keyPassword": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "certFile",
+                            "keyFile"
+                          ],
+                          "name": "ballerina/http:2.2.2:CertKey"
+                        }
+                      ]
+                    },
+                    "protocol": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "enum": [
+                            "DTLS",
+                            "TLS",
+                            "SSL"
+                          ]
+                        },
+                        "versions": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "versions"
+                      ]
+                    },
+                    "certValidation": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "enum": [
+                            "OCSP_STAPLING",
+                            "OCSP_CRL"
+                          ]
+                        },
+                        "cacheSize": {
+                          "type": "integer"
+                        },
+                        "cacheValidityPeriod": {
+                          "type": "integer"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "type",
+                        "cacheSize",
+                        "cacheValidityPeriod"
+                      ]
+                    },
+                    "ciphers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "verifyHostName": {
+                      "type": "boolean"
+                    },
+                    "shareSession": {
+                      "type": "boolean"
+                    },
+                    "handshakeTimeout": {
+                      "type": "number"
+                    },
+                    "sessionTimeout": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "enable",
+                    "verifyHostName",
+                    "shareSession"
+                  ],
+                  "name": "ballerina/http:2.2.2:ClientSecureSocket"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "clientId",
+                "clientSecret",
+                "refreshUrl",
+                "refreshToken",
+                "project",
+                "callbackURL"
+              ],
+              "name": "ballerinax/trigger.google.mail:0.6.6:ListenerConfig",
+              "description": ""
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "gDriveFolderId",
+            "gDriveOauthConfig",
+            "config"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
