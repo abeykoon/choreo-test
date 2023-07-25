@@ -1,0 +1,16 @@
+"A service representing a network-accessible GraphQL API"
+type Query {
+  """
+  A resource for generating greetings
+  Example query:
+  query GreetWorld{ 
+  greeting(name: "World") 
+  }
+  Curl command: 
+  curl -X POST -H "Content-Type: application/json" -d '{"query": "query GreetWorld{ greeting(name:\"World\") }"}' http://localhost:8090
+  """
+  greeting(
+    "the input string name"
+    name: String!
+  ): String!
+}

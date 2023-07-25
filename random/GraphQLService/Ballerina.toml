@@ -10,3 +10,4 @@
   org = "hasithahiranya"
   version = "3.1.1"
 
+include = [".choreo/endpoints.yaml", "resources/schema_sample.graphql"]
